@@ -69,8 +69,8 @@ class Attachment
     }
 
     /**
-     * gets a url to an attachment size, even if the api does not return that size.
-     * BEWARE: this method cannot ensure that the url is a valid ressource
+     * gets an url to an attachment size, even if the api does not return that size.
+     * BEWARE: this method cannot ensure that the url is a valid resource
      *
      * @param string $size
      *
@@ -79,7 +79,7 @@ class Attachment
     public function calculateUrl($size = 'orig')
     {
         if ($this->canConvertUrl) {
-            if (!in_array($size, array('big', 'big2', 'medium', 'small', 'pdf', 'wohnimpuls_medium', 's220x155', 's312x208', 'fullhd', 'hq', 'default'))) {
+            if (!in_array($size, array('big', 'big2', 'medium', 'small', 'pdf', 'wohnimpuls_medium', 's220x155', 's312x208', 'fullhd', 'hq', 'default', 'orig'))) {
                 $size = 'medium';
             }
 

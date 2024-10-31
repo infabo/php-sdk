@@ -1,3 +1,47 @@
+## 1.2.13
+* Add funding Inquiry ("funding_inquiry") to RealtyInquiryRequest
+ 
+## 1.2.12
+* Add company ("firma") to RealtyInquiryRequest
+
+## 1.2.11
+* Bugfix
+  * Fix type of parameter "numeric_prefix" of http_build_query function
+
+## 1.2.10
+ * Bugfix
+   * fixes BasicDataWrapper::transformZipCodes will always use auto incremented array key ID instead of the JI related zip code ID.
+
+## 1.2.9
+ * Extends RealtyInquiryRequest with
+   * IsRealtyOwner (Anfragesteller ist Eigentümer einer Immobilie)
+   * RealtyOwnerConsultationRequest (Anfragesteller ist Eigentümer und wünscht Beratung)
+
+## 1.2.8
+ * Bugfix
+   * Fixes a bug that picture size "orig" in Attachment::getData() would be overwritten by another size under certain circumstances
+
+## 1.2.7
+ * Extends findPk method in abstract query for project queries
+   * it needs to accept the parameter `alleProjektObjekte` to be able to list sub real-estates of a given project with status STATUS_PROCURED (8) and STATUS_EXTERNAL_PROCURED (10)
+
+## 1.2.6
+ * Extends Realty object with
+   * SalesArea (Verkaufsfläche)
+   * HallHeight (Hallenhöhe)
+   * ShortTermArea (Befristete Fläche)
+   * WeightedArea (Gewichtete Fläche)
+   * UndevelopedAtticArea (Rohdachbodenfläche)
+ * Bugfix
+   * Fixing RentDurationType to support unlimited (unbefristet) renting period
+
+## 1.2.5
+ * Add support for picturesize parameter in employee calls
+
+## 1.2.4
+ * Add support for newsletter registration
+ * Fix multiple phpdoc types - thx @infabo
+
 ## 1.2.0
  * Add support for new attachment urls
 

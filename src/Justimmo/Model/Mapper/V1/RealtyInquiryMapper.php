@@ -26,6 +26,8 @@ class RealtyInquiryMapper extends AbstractMapper
             'title'        => 'titel',
             'salutationId' => 'anrede_id',
             'category'     => 'kategorie',
+            'company'      => 'firma',
+            'fundingInquiry' => 'funding_inquiry',
         );
     }
 

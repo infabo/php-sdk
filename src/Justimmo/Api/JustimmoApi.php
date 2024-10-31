@@ -125,9 +125,11 @@ class JustimmoApi implements JustimmoApiInterface
     /**
      * @inheritdoc
      */
-    public function callRealtyDetail($pk)
+    public function callRealtyDetail($pk, array $params = array())
     {
-        return $this->call('objekt/detail', array('objekt_id' => $pk));
+        $params['objekt_id'] = $pk;
+
+        return $this->call('objekt/detail', $params);
     }
 
     /**
@@ -141,9 +143,11 @@ class JustimmoApi implements JustimmoApiInterface
     /**
      * @inheritdoc
      */
-    public function callProjectDetail($pk)
+    public function callProjectDetail($pk, array $params = array())
     {
-        return $this->call('projekt/detail', array('id' => $pk));
+        $params['id'] = $pk;
+
+        return $this->call('projekt/detail', $params);
     }
 
     /**
@@ -262,7 +266,7 @@ class JustimmoApi implements JustimmoApiInterface
     {
         $url = $this->baseUrl . '/' . $this->version . '/' . $call;
         if (count($params) > 0) {
-            $queryString = http_build_query($params, null, '&');
+            $queryString = http_build_query($params, '', '&');
             $queryString = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $queryString);
             $url .= '?' . $queryString;
         }

@@ -23,7 +23,9 @@ abstract class AbstractQuery implements QueryInterface
         'big2',
         'fullhd',
         'fullhd_downscale',
-        'orig'
+        'orig',
+        'user_small',
+        'user_medium',
     );
 
     /**
@@ -146,6 +148,9 @@ abstract class AbstractQuery implements QueryInterface
         $params = array();
         if (isset($this->params['picturesize'])) {
             $params['picturesize'] = $this->params['picturesize'];
+        }
+        if (isset($this->params['alleProjektObjekte'])) {
+            $params['alleProjektObjekte'] = $this->params['alleProjektObjekte'];
         }
 
         $method   = $this->getDetailCall();
